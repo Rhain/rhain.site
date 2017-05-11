@@ -1,0 +1,94 @@
+.demo{
+    display: flex;
+    height: 100vh;
+    text-align: center;
+}
+.container{
+    align-self: center;
+    margin: 0 auto;
+    position: relative;
+    perspective: 750px;
+}
+.images-wrapper{
+    width: 550px;
+    height: 367px;
+    margin: 0 auto 40px;
+    position: relative;
+}
+.image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    opacity: 0;
+}
+
+.image-wrapper.active{
+    opacity: 1;
+}
+
+.image-wrapper img{
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+}
+
+.controls-wrapper {
+    display: inline-block;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+#circle-line{
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    transform: rotate(90deg);
+}
+#circle-line.flip{
+    transform: rotate(90deg) scaleY(-1);
+}
+#circle-line-path{
+    stroke-dasharray: 106;
+    stroke-dashoffset: 0;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    stroke: #f6a4eb;
+}
+.straight-line{
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    bottom: 0;
+    height: 4px;
+    background: #f6a4eb;
+    border-radius: 3px;
+    transform-origin: left;
+    transform: scaleX(0);
+}
+svg {
+    display: block;
+}
+.dot {
+    width: 14px;
+    height: 14px;
+    background: #ddd;
+    border-radius: 50%;
+    margin: 12px;
+    cursor: pointer;
+    transform: scale(.85);
+    transition: .3s all ease;
+}
+.dot.active{
+    background: #9251ac;
+    transform: scale(1.1);
+}
+
