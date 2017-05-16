@@ -24,6 +24,8 @@ title: ping pong animation
 
 1. 使用css 的`transform` 来变换乒乓球和球拍的位置实现。
 
+具体实现代码见：[https://github.com/Rhain/rhain.site/tree/master/source/src/ping-pong-animation](https://github.com/Rhain/rhain.site/tree/master/source/src/ping-pong-animation)
+
 
 #### 关键代码
 
