@@ -1,0 +1,82 @@
+body{
+    background: #77cfd8;
+}
+
+.content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+}
+
+.player {
+    height: 40px;
+    width: 3px;
+    background-color: white;
+    position: relative;
+}
+
+.player_one{
+    left: -180px;
+    animation: player_one_move 4s infinite;
+}
+
+.player_two{
+    left: 20px;
+    animation: player_two_move 4s infinite;
+}
+
+.ball{
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    position: relative;
+    animation: ball_move 4s infinite;
+    background-color: white;
+}
+
+@keyframes player_one_move {
+    0%, 100%{
+        transform: translate(0px, 100px);
+    }
+    25% {
+        transform: translate(0px, 0px);
+    }
+    50% {
+        transform: translate(0px, 0px);
+    }
+    75%{
+        transform: translate(0px, 100px);
+    }
+}
+
+@keyframes player_two_move {
+    0%, 100%{
+        transform: translate(0px, -50px);
+    }
+    25% {
+        transform: translate(0px, 10px);
+    }
+    50% {
+        transform: translate(0px, 0px);
+    }
+    75%{
+        transform: translate(0px, 50px);
+    }
+}
+
+@keyframes ball_move {
+    0%, 100% {
+        transform: translate(-180px, 30px);
+    }
+    25% {
+        transform: translate(18px, -25px);
+    }
+    50% {
+        transform: translate(-180px, -55px);
+    }
+    75%{
+        transform: translate(18px, 15px);
+    }
+}
