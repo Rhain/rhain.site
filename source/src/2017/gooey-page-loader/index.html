@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gooey page loader</title>
+
+    <link rel="stylesheet" href="../../common/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="grid">
+        <div class="row">
+            <div class="circel-1"></div>
+            <div class="circel-2"></div>
+            <div class="circel-3"></div>
+        </div>
+        <div class="row">
+            <div class="circel-4"></div>
+            <div class="circel-5"></div>
+            <div class="circel-6"></div>
+        </div>
+        <div class="row">
+            <div class="circel-7"></div>
+            <div class="circel-8"></div>
+            <div class="circel-9"></div>
+        </div>
+    </div>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+        <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+            <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+        </filter>
+    </defs>
+</svg>
+</body>
+</html>

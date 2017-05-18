@@ -1,0 +1,139 @@
+body{
+    background-color: #e9709f;
+
+}
+.container{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.grid{
+    filter: url("#goo");
+}
+
+.row{
+    display: inline-block;
+    position: absolute;
+}
+
+.circel-1,.circel-2,.circel-3,.circel-4,.circel-5,.circel-6,.circel-7,.circel-8,.circel-9{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: white;
+    margin-bottom: 10px;
+    animation-timing-function: cubic-bezier(0.14, 0.75, 0.2, 1.01);
+}
+
+.circel-1{
+    left: -30px;
+    animation: move1 3s infinite 0.3s;
+}
+.circel-2{
+    animation: move2 3s infinite 0.3s;
+}
+.circel-3{
+    left: 30px;
+    animation: move3 3s infinite 0.4s;
+}
+.circel-4{
+    left: -30px;
+    top: 30px;
+    animation: move4 3s infinite 0.45s;
+}
+.circel-5{
+    top: 30px;
+}
+.circel-6{
+    left: 30px;
+    top: 30px;
+    animation: move6 3s infinite 0.5s;
+}
+.circel-7{
+    left: -30px;
+    top: 60px;
+    animation: move7 3s infinite 0.55s;
+}
+.circel-8{
+    top: 60px;
+    animation: move8 3s infinite 0.6s;
+}
+.circel-9{
+    left: 30px;
+    top: 60px;
+    animation: move9 3s infinite 0.65s;
+}
+
+@keyframes move1 {
+    0%, 100%{
+        transform: translate3d(0, 0, 0);
+    }
+    50%{
+         transform: translate3d(30px, 30px, 0);
+    }
+}
+@keyframes move2 {
+    0%, 100%{
+        transform: translate3d(0, 0, 0);
+    }
+    50%{
+        transform: translate3d(0px, 30px, 0);
+    }
+}
+
+@keyframes move3 {
+    0%, 100%{
+        transform: translate3d(0, 0, 0);
+    }
+    50%{
+        transform: translate3d(-30px, 30px, 0);
+    }
+}
+
+@keyframes move4 {
+    0%, 100%{
+        transform: translate3d(0, 0, 0);
+    }
+    50%{
+        transform: translate3d(30px, 0px, 0);
+    }
+}
+@keyframes move6 {
+    0%, 100%{
+        transform: translate3d(0, 0, 0);
+    }
+    50%{
+        transform: translate3d(-30px, 0px, 0);
+    }
+}
+
+@keyframes move7 {
+    0%, 100%{
+        transform: translate3d(0, 0, 0);
+    }
+    50%{
+        transform: translate3d(30px, -30px, 0);
+    }
+}
+
+@keyframes move8 {
+    0%, 100%{
+        transform: translate3d(0, 0, 0);
+    }
+    50%{
+        transform: translate3d(0, -30px, 0);
+    }
+}
+
+@keyframes move9 {
+    0%, 100%{
+        transform: translate3d(0, 0, 0);
+    }
+    50%{
+        transform: translate3d(-30px, -30px, 0);
+    }
+}
