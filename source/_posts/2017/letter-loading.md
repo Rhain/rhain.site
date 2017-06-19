@@ -23,6 +23,8 @@ title: Letter loading
 box-shadow:0 15px 0 rgb(242, 198, 64);
 ```
 
+具体实现见：[https://github.com/Rhain/rhain.site/tree/master/source/src/2017/Letter-loading-animation](https://github.com/Rhain/rhain.site/tree/master/source/src/2017/Letter-loading-animation)
+
 #### 关键代码
 
 ```

@@ -1,0 +1,31 @@
+body{
+    background-color: #1e0059;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    perspective: 5em;
+}
+
+body:after{
+    background-color: inherit;
+    border-radius: 50%;
+    box-shadow: 0 0 2em 2em #1e0059;
+    content: '';
+    height: 1em;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 1em;
+}
+
+.cylinder{
+    animation-iteration-count: infinite;
+    animation-name: tunnel;
+    animation-timing-function: linear;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-style: preserve-3d;
+
+}
