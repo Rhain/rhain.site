@@ -1,0 +1,242 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+body {
+    background: #303845;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 24px;
+    box-sizing: border-box;
+}
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.center {
+    position: relative;
+}
+.center:before {
+     content: 'SVG + CSS';
+     display: none;
+     position: absolute;
+     bottom: 16px;
+     left: 16px;
+     padding: 8px 12px;
+     font-weight: bold;
+     font-size: 14px;
+     color: white;
+     background: #7f8794;
+     border-radius: 4px;
+     font-family: arial, helvetica, sans-serif;
+     box-shadow: 0 3px 0 black;
+ }
+
+@media screen and (max-width: 480px) {
+    .center:before {
+        display: none;
+    }
+}
+
+.center__image {
+    background: #1c232d;
+}
+
+.artwork{
+    transform-origin: 0;
+    animation: artwork 4000ms ease-in-out infinite;
+}
+
+@keyframes artwork {
+    0%{ /* 首先位于可视区域下方 */
+        transform: translateY(800px);
+    }
+    15%{ /* 0-600ms时，从下方移动到了初始位置 */
+        transform: translateY(0);
+    }
+    20%{ /* 600ms-800ms 保持不变 */
+        transform: translateY(0);
+    }
+    50%{ /* 800ms-2000ms 原样保持不变 */
+        transform: scale(1) translateX(0);
+    }
+    52%{ /* 2000ms-2080ms 缩小至原来0.6倍 向上移动120px 模拟枪发射后 后退的效果 */
+        transform: scale(0.6) translate(0, -120px);
+    }
+    60%{ /* 2080ms-2400ms 向前移动80px 向上移动20px 模拟枪后退恢复原位的效果 */
+        transform: scale(0.6) translate(80px, -140px);
+    }
+    70%{ /* 2400ms-2800ms 想下移动20px 模拟枪后退恢复原位的效果 */
+        transform: scale(0.6) translate(80px, -120px);
+    }
+    80%,100%{ /* 2800ms-3200ms 向上移动680px 移出到视线外 */
+        transform: scale(0.6) translate(80px, -800px);
+    }
+}
+
+.raygun{
+    transform-origin: center;
+    animation: raygun 4000ms ease-in-out infinite;
+}
+
+@keyframes raygun {
+    0%{ /* 旋转40度 */
+        transform: rotate(40deg);
+    }
+    15%{ /* 0-600ms 旋转奥-16度 此时raygun 已经从下方移动到了初始位置了 */
+        transform: rotate(-16deg);
+    }
+    25%{ /* 600ms-1000ms 旋转到8度，raygun还在原始位置*/
+        transform: rotate(8deg);
+    }
+    30%{ /* 1000ms-1200ms 旋转到-2度*/
+      transform: rotate(-2deg);
+    }
+    32%,
+    36%,
+    40%,
+    44%,
+    48% {
+        transform: rotate(-0.5deg);
+    }
+    34%,
+    38%,
+    42%,
+    46%,
+    50% { /* 从1200ms 到 2000ms 这段时间内每隔80ms 交替旋转0.5度和-0.5度 模拟一个蓄力的效果 */
+        transform: rotate(0.5deg);
+    }
+    50%{ /* 2000ms 旋转到初始位置 */
+        transform: rotate(0);
+    }
+    52%{ /* 2000ms-2080ms 旋转-16度，此时raygun发射后往后退。 */
+        transform: rotate(-16deg);
+    }
+    60%{ /* 2080ms-2400ms 旋转到12度， 此时raygun向前同时向上运动*/
+        transform: rotate(12deg);
+    }
+    80%, 100%{ /* 2400ms-3200ms 旋转到-12度，保持到结束*/
+        transform: rotate(-12deg);
+    }
+}
+
+.gun-trigger{
+    transform-origin: center 20%;
+    animation: gun-trigger 4000ms ease-in-out infinite;
+}
+@keyframes gun-trigger {
+    0%,30%{ /* 需要在枪蓄力的过程中有一个扳动的效果。其他的时间保持初始状态 */
+        transform: rotate(0);
+    }
+    46%{ /* 1200ms-1840ms 旋转32度 模拟扳手往后扣动的效果 */
+        transform: rotate(32deg);
+    }
+    48%,100%{ /*1840ms-1920ms 旋转到初始位置，发射完后回归*/
+        transform: rotate(0);
+    }
+}
+
+.sheen{
+    animation: sheen 4000ms ease-in-out infinite;
+}
+
+@keyframes sheen {
+    0%,25%{ /* 0-1000ms还处于视野外 */
+        transform: translateX(-320px);
+    }
+    40%,55%{ /* 1000ms-1600ms的时候，开枪前 闪光从左至右 1600ms-2200ms 保持不动 */
+        transform: translateX(320px);
+    }
+    70%,100%{ /* 2200ms-2800ms 开枪后 闪光从右至左， 2800ms-4000ms 保持不动 */
+        transform: translateX(-320px);
+    }
+}
+
+.gun-charge{
+    transform-origin: center;
+    animation: gun-charge 4000ms ease-in-out infinite;
+}
+@keyframes gun-charge {
+    0%,20%{ /* 先隐藏 */
+        opacity: 0;
+        fill: #4193f2;
+        transform: scale(1);
+    }
+    45%{ /* 800ms-1800ms聚能光变大同时透明度增加 发射前 */
+        opacity: 0.5;
+        fill: #4193f2;
+        transform: scale(0.9);
+    }
+    50%,100%{ /* 发射后聚能光变白，同时缩小消失 */
+        opacity: 1;
+        fill: white;
+        transform: scale(0);
+    }
+}
+
+.line{
+    animation: line 4000ms ease-in-out infinite;
+}
+
+@keyframes line {
+    0%,49%{ /* 发射前都是不可见的*/
+        stroke: transparent;
+        stroke-dashoffset: 0;
+        stroke-dasharray: 5,200;
+    }
+    50%{ /* 发射后可见*/
+        stroke: white;
+    }
+    55%{ /* 发射后散光扩散，需要注意要实现从内往外扩散的效果 stroke-dashoffset的值设置为负值，会向初始的方向反方向运动 */
+        stroke-dashoffset: -80px;
+        stroke-dasharray: 20,200;
+        stroke: white;
+    }
+    60%,100%{
+        stroke-dashoffset: -120px;
+        stroke-dasharray: 5, 200;
+        stroke: transparent;
+    }
+}
+
+.beam-white{
+    animation: white-beam 4000ms ease-in-out infinite;
+}
+@keyframes white-beam {
+    0%,50%{ /* 开始不可见*/
+        opacity: 0;
+        stroke-dashoffset: 0;
+        stroke-dasharray: 400, 2000;
+    }
+    51%,69%{ /* 发射后可见 激光可见*/
+        opacity: 1;
+    }
+    70%, 100%{ /* 激光向右方收缩 */
+        opacity: 0;
+        stroke-dashoffset: -500px;
+        stroke-dasharray: 0, 2000;
+    }
+}
+
+.beam-blue{
+    animation: blue-beam 4000ms ease-in-out infinite;
+}
+@keyframes blue-beam {
+    0%,55%{ /* 开始不可见*/
+        opacity: 0;
+        stroke-dashoffset: 0;
+        stroke-dasharray: 300, 2000;
+    }
+    56%,69%{ /* 发射后可见 激光可见 蓝色激光比白色激光延迟点出现*/
+        opacity: 1;
+    }
+    70%, 100%{ /* 激光向右方收缩 */
+        opacity: 0;
+        stroke-dashoffset: -550px;
+        stroke-dasharray: 0, 2000;
+    }
+}

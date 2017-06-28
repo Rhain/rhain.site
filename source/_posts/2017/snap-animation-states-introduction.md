@@ -79,3 +79,6 @@ svg需要一个容器元素。如下：
 		* array: used for toggle events. ["state1", "state2"] can be toggled when the event happens
 	- `selector: string` a css selector used to indicate where to watch for the event - ex: an svg inside an anchor tag.  The anchor tag will receive the selector so that when the anchor is clicked the svg animation runs.
 
+一些加上中文注释的例子：
+
+[Snap states 例子注释版](https://github.com/Rhain/rhain.site/tree/master/source/src/2017/snap-animation-states)
