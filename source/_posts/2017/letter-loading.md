@@ -19,7 +19,7 @@ title: Letter loading
 
 1. 字母向上运动时，底部的颜色可以通过使用css3的`box-shadow`来实现。
 
-``` css
+```css
 box-shadow:0 15px 0 rgb(242, 198, 64);
 ```
 
@@ -27,7 +27,7 @@ box-shadow:0 15px 0 rgb(242, 198, 64);
 
 #### 关键代码
 
-```
+```css
 @keyframes jump {
     0%, 100%{
         transform: translateY(0px);

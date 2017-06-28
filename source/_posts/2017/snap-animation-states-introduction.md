@@ -15,7 +15,7 @@ title: Snap Animation States 介绍
 
 在html文档底部引入[Snap.svg 0.4.1](https://cdnjs.com/libraries/snap.svg/0.4.1)和snap-animation-states.js。 不需要依赖jquery。
 
-```
+```javascript
 <script type="text/javascript" src="js/snap.svg.js">
 <script type="text/javascript" src="js/snap-animation-states.js">
 ```
@@ -24,14 +24,14 @@ title: Snap Animation States 介绍
 
 svg需要一个容器元素。如下：
 
-```
+```html
 <i class="icon-hamburger"></i>
 <i class="my-svg-selector"></i>
 ```
 
 #### 调用插件
 
-```
+```javascript
 (function() {
     SnapStates({ ...schema... })
 })();

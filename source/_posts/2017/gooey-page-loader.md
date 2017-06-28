@@ -24,7 +24,7 @@ title: Gooey page loader
 
 2. 注意在球容器的背景设置filter 才会有水滴融合分散的视觉效果。
 
-``` css
+```css
 .grid{
     filter: url("#goo");
 }
@@ -43,7 +43,7 @@ title: Gooey page loader
 
 #### 关键代码
 
-``` css
+```css
 
 .circel-1{
     left: -30px;
