@@ -1,0 +1,37 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #88aacd;
+    height: 100vh;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0 20px;
+}
+
+ul li button {
+    background: #247BA0;
+}
+
+button {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border:5px solid white;
+    color: white;
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 50px;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+}

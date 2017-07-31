@@ -6,9 +6,7 @@ title: Faster Page Load Using Lightweight CSS and SVG Animation (Without JavaScr
 
 这不是一篇完全的翻译文， 而是看过原文之后，加入自己的理解的翻译文:D
 
-原文首先讲了web页面的动画是多么的棒。但是呢，一般的web动画工具，都需要javascript的动画库和图片文件。这就导致了用户要花宝贵的时间在等待
-资源的加载上。如果想要给自己的主页加上一个非常吸引人的动画，那应该要保证页面加载时间在2s内。那么有什么轻量级的解决方案既不会损害网站性能
-同时也不会降低用户体验呢？其中一个的解决方案那就是使用css和svg动画，不需要javascript的参与！
+原文首先讲了web页面的动画是多么的棒。但是呢，一般的web动画工具，都需要javascript的动画库和图片文件。这就导致了用户要花宝贵的时间在等待资源的加载上。如果想要给自己的主页加上一个非常吸引人的动画，那应该要保证页面加载时间在2s内。那么有什么轻量级的解决方案既不会损害网站性能同时也不会降低用户体验呢？其中一个的解决方案那就是使用css和svg动画，不需要javascript的参与！
 
 #### 行内svg的css动画优缺点
 
@@ -33,19 +31,19 @@ svg动画最复杂的部分应该是为了实现动画如何把svg图片中路�
 
 现在来拆解上图的动画。
 * 动画都是一个整体在运动，不管进场出场，还是缩放。这就可以把所有的path包含在一个group里面，这样就可以操作整个svg对象了。
-```css
+``` html
 <g class="artwork" id="artwork" data-name="artwork">
 </g>
 ```
 * 枪的旋转和移动相对于射出的光线和发射时的光束是独立，因此我们可以把抢的部分归到一个group里面
-```css
+``` html
     <g class="raygun" id="raygun">
     </g>
     <g id="beam">
     </g>
 ```
 * 枪身上的闪光，可以使用蒙板来实现，闪光需要跟枪一起运动，所以把闪光这层放在raygun group里面。 需要注意的闪光是位于底部和枪表面中间。
-```css
+``` html
     <g class="raygun" id="raygun">
         <g id="gun-background">
         </g>
@@ -67,13 +65,12 @@ svg动画最复杂的部分应该是为了实现动画如何把svg图片中路�
 1. 每个动画单独处理分为多个animation， 动画的衔接通过 animation-delay 来实现。
 2. 所有动画都在一个animation里面，每个动画在某一段时间内处理。
 
-原文作者选择了第二种方式，原因是可以通过一个变量控制整个动画时间。 当然这种方式也有相应的缺点，就是在使用easing function的时候只能使用
-1个，不能为每个动画使用单独的easing function。
+原文作者选择了第二种方式，原因是可以通过一个变量控制整个动画时间。 当然这种方式也有相应的缺点，就是在使用easing function的时候只能使用1个，不能为每个动画使用单独的easing function。
 
 下面我们来看下每个动画的实现：
 
 1. 首先是整体的动画：
-```css
+``` css
 .artwork{
     transform-origin: 0;
     animation: artwork 4000ms ease-in-out infinite;
@@ -107,7 +104,7 @@ svg动画最复杂的部分应该是为了实现动画如何把svg图片中路�
 }
 ```
 2. raygun的动画， 需要有旋转和跳跃的效果。
-```css
+``` css
 .raygun{
     transform-origin: center;
     animation: raygun 4000ms ease-in-out infinite;
@@ -117,7 +114,7 @@ svg动画最复杂的部分应该是为了实现动画如何把svg图片中路�
     0%{ /* 旋转40度 */
         transform: rotate(40deg);
     }
-    15%{ /* 0-600ms 旋转奥-16度 此时raygun 已经从下方移动到了初始位置了 */
+    15%{ /* 0-600ms 旋转到-16度 此时raygun 已经从下方移动到了初始位置了 */
         transform: rotate(-16deg);
     }
     25%{ /* 600ms-1000ms 旋转到8度，raygun还在原始位置*/
@@ -155,7 +152,7 @@ svg动画最复杂的部分应该是为了实现动画如何把svg图片中路�
 }
 ```
 3. 枪扳手的动画：
-```css
+``` css
 .gun-trigger{
     transform-origin: center 20%;
     animation: gun-trigger 4000ms ease-in-out infinite;
@@ -173,7 +170,7 @@ svg动画最复杂的部分应该是为了实现动画如何把svg图片中路�
 }
 ```
 4. 枪身的闪光动画，使用了svg的蒙板来实现：
-```css
+``` css
     .sheen{
         animation: sheen 4000ms ease-in-out infinite;
     }
@@ -191,7 +188,7 @@ svg动画最复杂的部分应该是为了实现动画如何把svg图片中路�
     }
 ```
 5. 枪聚能的光环动画：
-```css
+``` css
 .gun-charge{
     transform-origin: center;
     animation: gun-charge 4000ms ease-in-out infinite;
@@ -215,7 +212,7 @@ svg动画最复杂的部分应该是为了实现动画如何把svg图片中路�
 }
 ```
 6. 发射后散光效果：
-```css
+``` css
 @keyframes line {
     0%,49%{ /* 发射前都是不可见的*/
         stroke: transparent;
@@ -238,7 +235,7 @@ svg动画最复杂的部分应该是为了实现动画如何把svg图片中路�
 }
 ```
 7. 发射的激光效果：
-```css
+``` css
 .beam-white{
     animation: white-beam 4000ms ease-in-out infinite;
 }
@@ -277,3 +274,5 @@ svg动画最复杂的部分应该是为了实现动画如何把svg图片中路�
     }
 }
 ```
+
+[源码](https://github.com/Rhain/rhain.site/tree/master/source/src/2017/raygun)

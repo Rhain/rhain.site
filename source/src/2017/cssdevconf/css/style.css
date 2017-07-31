@@ -1,0 +1,30 @@
+html, body{
+    height: 100%;
+    margin: 0;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:linear-gradient(to bottom, #09121b 20%, #141e30 60%, #2a1b33 80%, #d2489a 180%);
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+#starsBox{
+    position: fixed;
+    top:0;
+    right: 0;
+    left: 0;
+    bottom: 50%;
+    opacity: 0.5;
+}
+
+#starsBox span{
+    display: inline-block;
+    width: auto;
+    position: absolute;
+    border-radius: 100%;
+    transition: left 500s linear, top 500s linear;
+}
