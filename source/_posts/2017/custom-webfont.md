@@ -20,3 +20,5 @@ webfont官网并没有提供一个非常好的例子来说明如何使用。 结
 
 同时采用vue来展示已经收集的字体图标，可以在页面上直观的看到。
 
+源码参考： [custom-webfont](https://github.com/Rhain/rhain.site/tree/master/source/src/custom-webfont)
+
