@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SVG logo 随着背景色变化而变化</title>
+    <link rel="stylesheet" href="../../common/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="castle" viewBox="0 0 82.65 94.7">
+        <polygon points="36.74 94.7 82.64 83.54 82.66 21.18 36.75 10 36.74 94.7"/>
+        <polygon points="0 18.95 9.05 16.75 9.05 10.77 0 8.56 0 18.95"/>
+        <polygon points="27.55 12.24 27.55 6.53 18.5 4.32 18.5 14.45 27.55 12.24"/>
+        <polygon points="73.59 25.43 82.64 23.23 82.65 10.94 73.6 8.73 73.59 25.43"/>
+        <polygon points="55.17 4.32 55.17 21.02 64.22 18.82 64.22 6.53 55.17 4.32"/>
+        <polygon points="36.75 0 36.75 16.7 45.8 14.5 45.8 2.21 36.75 0"/>
+    </symbol>
+
+    <symbol id="logo" viewBox="0 0 290.41 492.39">
+        <path d="M6.64 364.29h25V369h-25v28.51H1.43v-60.99h30.24v4.66h-25v23.12zM90.78 346.11c4.57 5.39 6.76 12.43 6.76 21.65 0 9.78-3.56 18.18-10.14 23.67a29.88 29.88 0 0 1-18.91 7.13 29.75 29.75 0 0 1-23.21-11.7c-3.75-4.93-5.85-11.88-5.85-19.55 0-9.68 3-17.54 9-23.39a29.28 29.28 0 0 1 20.28-8.5 29.41 29.41 0 0 1 22.07 10.69zm-46.05 20.83c0 15.62 9.87 26.86 23.67 26.86a24 24 0 0 0 17.54-7.86c3.75-4.29 6.3-11.6 6.3-18.55 0-9-2.29-15.35-7.31-20.28a24.28 24.28 0 0 0-16.36-6.94c-13.7 0-23.84 11.33-23.84 26.77zM115.36 397.46h-5.21v-60.94h15.62c11.88 0 19.46 6.67 19.46 17.18 0 7.4-3.84 13.34-10.42 16.08-2.47 1-5.76 1.46-10.33 1.46a20.94 20.94 0 0 1-2.1-.09l27.32 26.31h-7.13l-27.23-26.31v26.31zm8.77-30.33c10.23 0 15.81-4.57 15.81-13.16s-4.93-12.79-14.53-12.79h-10.05v25.95h8.77zM172.37 397.46h-5.21v-56.29h-16v-4.66h37.19v4.66h-16v56.28zM17.42 430.35c11.33 0 18.46 6.21 18.46 16.08a15 15 0 0 1-3.29 9.68c-1.46 1.65-2.83 2.56-6.21 4 3.38.64 4.93 1.28 6.85 2.65 3.47 2.65 5.39 6.85 5.39 12 0 5.76-2.47 10.69-6.76 13.43-3.75 2.38-7.67 3.11-15.9 3.11H1.43v-60.95h16zM6.64 458.41h9.23c5.21 0 8.31-.73 10.78-2.56a12 12 0 0 0 4.39-9.5c0-4.48-2.1-8.22-5.39-9.78-2.65-1.28-5-1.55-11.7-1.55H6.64v23.39zm0 28.23h8.5c7.58 0 10.14-.46 13.25-2.1 3.38-1.92 5.12-5.21 5.12-9.68 0-8-4.75-11.79-15.17-11.79H6.64v23.57zM78 486.09v5.21H50.76v-60.95H56v55.74h22zM132.54 439.95c4.57 5.39 6.76 12.43 6.76 21.65 0 9.78-3.56 18.18-10.14 23.67A28.78 28.78 0 0 1 87 480.7c-3.75-4.93-5.85-11.88-5.85-19.55 0-9.68 3-17.54 9-23.39a28.33 28.33 0 0 1 42.39 2.19zm-46.05 20.83c0 15.62 9.87 26.86 23.67 26.86a24 24 0 0 0 17.54-7.86c3.75-4.29 6.3-11.6 6.3-18.55 0-9-2.29-15.35-7.31-20.28a24.28 24.28 0 0 0-16.35-6.95c-13.71 0-23.85 11.34-23.85 26.78zM198.59 481.52c-2.74 3.75-4.48 5.3-7.58 7.13a28.23 28.23 0 0 1-14.34 3.75c-8.31 0-15.53-3.11-20.65-8.86s-8-14.16-8-22.66c0-18.18 12.15-31.61 28.6-31.61 9 0 16.08 3.47 22 10.87l-3.84 3.11a32.36 32.36 0 0 0-5.94-5.48 22.23 22.23 0 0 0-12.27-3.77c-13.34 0-23.21 11.42-23.21 27s10 26.68 23.48 26.68c7.22 0 12.61-2.83 17.91-9.5zM213.48 491.3h-5.21v-60.95h5.21v28.87l27-28.87h6.4L218.6 461l28.33 30.33h-7.22l-26.22-28.6v28.6zM255.69 475.76c.18 3.29.64 5 1.74 6.94 1.83 3.11 5.57 5 10.23 5 8.13 0 13.61-5 13.61-12.43 0-6-3.29-9-13.61-12.33-7.4-2.47-9.32-3.38-11.88-5.76a14.8 14.8 0 0 1-4.65-11.18c0-9.87 7-16.72 17.18-16.72s16.81 6.58 16.81 16.81h-5c-.09-3.56-.46-5.21-1.64-7.13-1.92-3.11-5.76-5-10.23-5a11.45 11.45 0 0 0-11.88 11.79 9.69 9.69 0 0 0 3.38 7.77c1.92 1.55 4.11 2.47 11.15 4.93 6.4 2.28 9.32 3.84 11.7 6.49a16 16 0 0 1 3.75 10.42c0 10-7.49 17.09-18.18 17.09-5.94 0-10.32-1.55-13.25-4.93a15.52 15.52 0 0 1-4-10.23v-1.46h4.84zM0 0h91.05v91.05H0zM99.68 0h91.05v91.05H99.68zM0 97.73h91.05v91.05H0zM99.68 97.73h91.05v91.05H99.68zM0 195.47h91.05v91.05H0zM199.36 0h91.05v91.05h-91.05z"/>
+    </symbol>
+
+</svg>
+
+<main class="main">
+    <div class="js-logos">
+        <div class="logo js-logo-main">
+            <svg>
+                <defs>
+                    <clipPath id="logo-main-mask">
+                        <rect x="0" y="0" width="200" height="120" />
+                    </clipPath>
+                </defs>
+
+                <g clip-path="url(#logo-main-mask)">
+                    <use xlink:href="#logo"/>
+                </g>
+            </svg>
+        </div>
+
+        <div class="logo logo--dark js-logo-alt">
+            <svg>
+                <defs>
+                    <clipPath id="logo-alt-mask">
+                        <rect x="0" y="120" width="200" height="0" />
+                    </clipPath>
+                </defs>
+
+                <g clip-path="url(#logo-alt-mask)">
+                    <use xlink:href="#logo"/>
+                </g>
+            </svg>
+        </div>
+    </div>
+    <section class="js-section js-section-dark section section--pad section--half section--background section--background-top">
+        <div class="hero">
+            <svg class="hero__icon">
+                <use xlink:href="#castle" />
+            </svg>
+            <h2 class="heading heading--1">
+                The Gold<br />
+                Standard for<br />
+                <strong>BitCoin Security</strong>
+            </h2>
+            <p class="hero__subtitle">
+                We've set a new standard for the secure storage of cryptocurrencies, specialising in long term Bitcoin investments for corporations and individuals.
+            </p>
+
+            <a href="#accountenquiries" class="button">Accounts enquiries</a>
+        </div>
+
+    </section>
+
+    <section class="js-section section section--pad">
+        <img class="bitcoin-logo" src="./img/bitcoin_logo.png" />
+
+        <div class="quote">
+            <p>
+                "Every informed person needs to know about Bitcoin because it might be one of the world's most important developments."
+            </p>
+            <p class="quote__author"><strong>Leon Luow</strong><br>Nobel Peace Prize Nominee</p>
+        </div>
+    </section>
+    <section class="js-section section section--pad section--light">
+        <div class="js-section section__constrain">
+            <h3 class="heading heading--2">
+                About<br />
+                <strong>Fort Blocks</strong>
+            </h3>
+            <div class="body-text body-text--columns">
+                <p><strong>Welcome to FortBlocks, the world's safest Bitcoin cold storage facility.</strong></p>
+                <p>You want to invest in the future potential of Blockchain technologies and are looking to invest in the gold standard, which is Bitcoin. The single biggest challenge is doing it safely, securely and with peace of mind.</p>
+                <p>Buying and storing digital currency is a complex process with multiple potential obstacles and pitfalls. Navigating these independently is possible when dealing with relatively small sums but once you're investing in the hundreds of thousands and millions, you need to make sure you're covered at the highest level, in the same way you are when you invest in fiat.</p>
+                <p>The most important factor in protecting your investment is storage security. Beyond any price fluctuation or external variables, you want peace of mind that your investment is protected and secure from personal error; loss or a compromise of hardware or software; malware or hackers.</p>
+                <p>FortBlocks has set a new standard for the secure storage of cryptocurrencies, specialising in long term Bitcoin investments for corporations and individuals. FortBlocks removes the complexity and concerns associated with digital currency investment; managing the process end-to-end to ensure the complete security of your investments.</p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<script src="../../common/jquery.js"></script>
+<script src="./js/main.js"></script>
+</body>
+</html>
